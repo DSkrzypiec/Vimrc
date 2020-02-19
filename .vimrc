@@ -25,6 +25,7 @@ set splitbelow
 set splitright
 set nohlsearch
 set laststatus=2
+set showcmd
 
 hi SL ctermbg=white ctermfg=black
 set statusline=
@@ -52,3 +53,19 @@ nmap tr :res -10<CR>
 nmap ,n :%s/<C-R><C-W>//g<left><left>
 nmap ,m :s/<C-R><C-W>//g<left><left>
 nmap ,f :!grep -r --exclude-dir='.*' -iIsnH '<C-R><C-W>'<CR>
+
+
+" Abbreviations
+"
+
+" Creates Go test function template
+iab GOTEST 
+\<CR>func Test(t *testing.T) {
+\<CR>    
+\<CR>}
+
+" Go HTTP handler signature
+iab GOHTTP 
+\<CR>func handler(w http.ResponseWriter, r *http.Request) {
+\<CR>
+\<CR>}
