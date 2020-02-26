@@ -13,8 +13,6 @@ filetype plugin indent on
 
 set number
 set relativenumber
-hi CursorLineNr ctermbg=white ctermfg=black
-hi LineNr ctermfg=grey
 set encoding=utf-8
 set tabstop=4
 set shiftwidth=4
@@ -23,9 +21,14 @@ set textwidth=79
 set expandtab
 set splitbelow
 set splitright
-set nohlsearch
+set hlsearch
 set laststatus=2
 set showcmd
+set wildmode=list:full
+
+hi CursorLineNr ctermbg=white ctermfg=black
+hi LineNr ctermfg=grey
+hi Search ctermbg=13 ctermfg=16
 
 hi SL ctermbg=white ctermfg=black
 set statusline=
