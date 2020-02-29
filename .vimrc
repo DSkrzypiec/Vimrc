@@ -29,6 +29,7 @@ set wildmode=list:full
 hi CursorLineNr ctermbg=white ctermfg=black
 hi LineNr ctermfg=grey
 hi Search ctermbg=13 ctermfg=16
+hi Visual ctermbg=13 ctermfg=16
 
 hi SL ctermbg=white ctermfg=black
 set statusline=
