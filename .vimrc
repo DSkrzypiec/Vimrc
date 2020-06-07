@@ -59,6 +59,10 @@ nmap ,m :s/<C-R><C-W>//g<left><left>
 nmap ,f :!grep -r --exclude-dir='.*' -iIsnH '<C-R><C-W>'<CR>
 
 
+" Options for external plugins
+let g:go_fmt_command = "goimports"
+
+
 " Abbreviations
 "
 
