@@ -1,5 +1,5 @@
-set nocompatible            
-filetype off               
+set nocompatible
+filetype off
 
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -7,6 +7,8 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'fatih/vim-go'
 Plugin 'ervandew/supertab'
+Plugin 'OmniSharp/omnisharp-vim'
+Plugin 'xavierd/clang_complete'
 
 call vundle#end()
 filetype plugin indent on
@@ -25,6 +27,9 @@ set hlsearch
 set laststatus=2
 set showcmd
 set wildmode=list:full
+set path+=**
+set list
+set listchars=tab:>-,trail:^
 
 hi CursorLineNr ctermbg=white ctermfg=black
 hi LineNr ctermfg=grey
