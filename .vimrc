@@ -115,3 +115,13 @@ let g:switch_custom_definitions =
 " Options for external plugins
 let g:go_fmt_command = "goimports"
 
+
+" Vim remaps
+nnoremap n nzzzv
+nnoremap N Nzzzv
+nnoremap J mzJ`z
+
+vnoremap J :m '>+1<CR>gv=gv
+vnoremap K :m '<-2<CR>gv=gv
+nnoremap <leader>k :m .-2<CR>==
+nnoremap <leader>j :m .+1<CR>==
