@@ -8,7 +8,11 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'fatih/vim-go'
 Plugin 'ervandew/supertab'
 Plugin 'OmniSharp/omnisharp-vim'
-Plugin 'xavierd/clang_complete'
+Plugin 'unblevable/quick-scope'
+Plugin 'ycm-core/YouCompleteMe'
+Plugin 'AndrewRadev/switch.vim'
+Plugin 'junegunn/fzf'
+Plugin 'junegunn/fzf.vim'
 
 call vundle#end()
 filetype plugin indent on
@@ -29,12 +33,13 @@ set showcmd
 set wildmode=list:full
 set path+=**
 set list
-set listchars=tab:>-,trail:^
+set listchars=tab:\|\,trail:^
 
 hi CursorLineNr ctermbg=white ctermfg=black
 hi LineNr ctermfg=grey
 hi Search ctermbg=13 ctermfg=16
 hi Visual ctermbg=13 ctermfg=16
+hi Pmenu ctermbg=8
 
 hi SL ctermbg=white ctermfg=black
 set statusline=
@@ -49,7 +54,7 @@ set statusline=
 :set statusline+=\ [line=%l/%L] " current line
 :set statusline+=\ [%p%%]       " perc lines
 
-syntax off
+syntax on
 
 nnoremap <C-l> :nohl<CR>
 nnoremap <C-n> :tabnew<Space>
@@ -63,22 +68,50 @@ nmap ,n :%s/<C-R><C-W>//g<left><left>
 nmap ,m :s/<C-R><C-W>//g<left><left>
 nmap ,f :!grep -r --exclude-dir='.*' -iIsnH '<C-R><C-W>'<CR>
 
+" Quick-scope
+let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
+let g:qs_hi_priority = 20
+
+let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
+let g:SuperTabMappingForward = '<tab>'
+
+" fzf.vim
+let g:fzf_preview_window = ['down:40%', 'ctrl-/']
+
+function! RipgrepFzf(query, fullscreen)
+  let command_fmt = 'rg --line-number --no-heading --color=always -- %s || true'
+  let initial_command = printf(command_fmt, shellescape(a:query))
+  let reload_command = printf(command_fmt, '{q}')
+  let spec = {'options': ['--phony', '--query', a:query, '--bind', 'change:reload:'.reload_command]}
+  call fzf#vim#grep(initial_command, 1, fzf#vim#with_preview(spec), a:fullscreen)
+endfunction
+
+command! -nargs=* -bang RG call RipgrepFzf(<q-args>, <bang>0)
+
+" C#
+let g:OmniSharp_highlighting = 0
+let g:OmniSharp_server_use_mono = 1
+
+nnoremap ,cp :OmniSharpPreviewDefinition<CR>
+nnoremap ,cg :OmniSharpGotoDefinition<CR>
+nnoremap ,cfu :OmniSharpFindUsages<CR>
+nnoremap ,cfs :OmniSharpFindSymbol<Space>
+nnoremap ,ct :OmniSharpTypeLookup<CR>
+nnoremap ,cu :OmniSharpFixUsings<CR>
+nnoremap ,cs :OmniSharpStatus<CR>
+nnoremap ,cr :OmniSharpRestartAllServers<CR>
+
+let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
+let g:SuperTabDefaultCompletionType = '<C-n>'
+
+" Switch.vim
+let g:switch_custom_definitions = 
+    \ [
+    \   ['crap', 'CRAPTEST']
+    \ ]
 
 " Options for external plugins
 let g:go_fmt_command = "goimports"
 
-
-" Abbreviations
-"
-
-" Creates Go test function template
-iab GOTEST 
-\<CR>func Test(t *testing.T) {
-\<CR>    
-\<CR>}
-
-" Go HTTP handler signature
-iab GOHTTP 
-\<CR>func handler(w http.ResponseWriter, r *http.Request) {
-\<CR>
-\<CR>}
