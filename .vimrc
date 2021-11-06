@@ -34,6 +34,8 @@ set wildmode=list:full
 set path+=**
 set list
 set listchars=tab:\|\,trail:^
+set clipboard=unnamed
+set foldmethod=manual
 
 hi CursorLineNr ctermbg=white ctermfg=black
 hi LineNr ctermfg=grey
@@ -119,3 +121,8 @@ vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
 nnoremap <leader>k :m .-2<CR>==
 nnoremap <leader>j :m .+1<CR>==
+
+" Creates folds
+nnoremap ,fl V/^$<CR>kzf:nohl<CR>   " from current line till first empyt line
+nnoremap ,fp v/(<CR>%zf:nohl<CR>    " form current line through '(' till matching ')'
+nnoremap ,fb v/{<CR>%zf:nohl<CR>    " from current line through '{' till matching '}'
