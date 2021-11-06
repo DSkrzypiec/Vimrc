@@ -56,18 +56,6 @@ set statusline=
 
 syntax on
 
-nnoremap <C-l> :nohl<CR>
-nnoremap <C-n> :tabnew<Space>
-nnoremap <C-j> :tabprev<CR>
-nnoremap <C-k> :tabnext<CR>
-nmap nm :vertical res +10<CR>
-nmap mn :vertical res-10<CR>
-nmap rt :res +10<CR>
-nmap tr :res -10<CR>
-nmap ,n :%s/<C-R><C-W>//g<left><left>
-nmap ,m :s/<C-R><C-W>//g<left><left>
-nmap ,f :!grep -r --exclude-dir='.*' -iIsnH '<C-R><C-W>'<CR>
-
 " Quick-scope
 let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
 let g:qs_hi_priority = 20
@@ -106,17 +94,23 @@ let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
 let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
 let g:SuperTabDefaultCompletionType = '<C-n>'
 
-" Switch.vim
-let g:switch_custom_definitions = 
-    \ [
-    \   ['crap', 'CRAPTEST']
-    \ ]
-
 " Options for external plugins
 let g:go_fmt_command = "goimports"
 
 
 " Vim remaps
+nnoremap <C-l> :nohl<CR>
+nnoremap <C-n> :tabnew<Space>
+nnoremap <C-j> :tabprev<CR>
+nnoremap <C-k> :tabnext<CR>
+nmap nm :vertical res +10<CR>
+nmap mn :vertical res-10<CR>
+nmap rt :res +10<CR>
+nmap tr :res -10<CR>
+nmap ,n :%s/<C-R><C-W>//g<left><left>
+nmap ,m :s/<C-R><C-W>//g<left><left>
+nmap ,f :!grep -r --exclude-dir='.*' -iIsnH '<C-R><C-W>'<CR>
+
 nnoremap n nzzzv
 nnoremap N Nzzzv
 nnoremap J mzJ`z
