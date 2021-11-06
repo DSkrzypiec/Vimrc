@@ -79,6 +79,13 @@ endfunction
 
 command! -nargs=* -bang RG call RipgrepFzf(<q-args>, <bang>0)
 
+" C++
+nnoremap ,cpf :py3f /opt/homebrew/Cellar/clang-format/12.0.0/share/clang/clang-format.py<CR>
+nnoremap ,cpg :YcmCompleter GoTo<CR>
+nnoremap ,cpfu :YcmCompleter GoToReferences<CR>
+nnoremap ,cpt :YcmCompleter GetType<CR>
+
+
 " C#
 let g:OmniSharp_highlighting = 0
 let g:OmniSharp_server_use_mono = 1
@@ -99,6 +106,8 @@ let g:SuperTabDefaultCompletionType = '<C-n>'
 " Options for external plugins
 let g:go_fmt_command = "goimports"
 
+" vim-slime
+let g:slime_target = "vimterminal"
 
 " Vim remaps
 nnoremap <C-l> :nohl<CR>
