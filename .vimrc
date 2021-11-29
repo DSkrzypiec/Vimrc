@@ -73,6 +73,7 @@ let g:ale_completion_enabled = 1
 nnoremap <leader>gs :Git<CR>
 nnoremap <leader>gd :Gdiffsplit<CR>
 nnoremap <leader>gb :Git blame<CR>
+xnoremap <leader>gdp :diffput<CR>
 
 
 " Quick-scope
