@@ -1,5 +1,6 @@
 local keymap = vim.api.nvim_set_keymap
 local default_opts = { noremap = true, silent = false }
+local expr_opts = { noremap = true, expr = true, silent = true }
 
 -- leader
 vim.g.mapleader = " "
@@ -21,3 +22,7 @@ keymap("n", "<leader>zb", "v/{<CR>%zf<CR>", default_opts)
 -- fzf
 keymap("n", "<leader>l", ":Lines<CR>", default_opts)
 keymap("n", "<leader>f", ":Files<CR>", default_opts)
+
+-- toggleterm
+keymap("n", "<leader>tl", ":ToggleTermSendCurrentLine<CR>", default_opts)
+keymap("v", "<leader>ts", ":ToggleTermSendVisualSelection<CR>", default_opts)

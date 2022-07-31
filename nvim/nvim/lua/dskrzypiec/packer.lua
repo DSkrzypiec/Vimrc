@@ -14,6 +14,9 @@ return require('packer').startup(function(use)
     use 'hrsh7th/cmp-path'
     use 'hrsh7th/cmp-cmdline'
 
+    use {"akinsho/toggleterm.nvim", tag = 'v2.*', config = function()
+        require("toggleterm").setup()
+    end}
     use 'fatih/vim-go'
     use 'ervandew/supertab'
     use 'junegunn/fzf'
