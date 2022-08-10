@@ -26,3 +26,9 @@ keymap("n", "<leader>f", ":Files<CR>", default_opts)
 -- toggleterm
 keymap("n", "<leader>tl", ":ToggleTermSendCurrentLine<CR>", default_opts)
 keymap("v", "<leader>ts", ":ToggleTermSendVisualSelection<CR>", default_opts)
+
+-- Fugitive
+keymap("n", "<leader>gs", ":Git<CR>", default_opts)
+keymap("n", "<leader>gd", ":Gdiffsplit<CR>", default_opts)
+keymap("n", "<leader>gb", ":Git blame<CR>", default_opts)
+keymap("v", "<leader>gdp", ":diffput<CR>", default_opts)

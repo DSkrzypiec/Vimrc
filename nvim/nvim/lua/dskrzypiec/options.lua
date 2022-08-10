@@ -15,4 +15,8 @@ vim.opt.splitbelow = true
 vim.opt.splitright = true
 vim.opt.laststatus = 2
 
+vim.opt.list = true
+vim.opt.listchars = { trail = '^', tab = '> ' }
+vim.opt.clipboard = "unnamed"
+
 vim.cmd([[ hi LineNr guibg=none guifg=#ffffff ]])

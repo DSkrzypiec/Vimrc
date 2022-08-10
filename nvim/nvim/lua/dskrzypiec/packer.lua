@@ -5,6 +5,7 @@ return require('packer').startup(function(use)
     use 'wbthomason/packer.nvim'
 
     use 'neovim/nvim-lspconfig'
+    use 'williamboman/nvim-lsp-installer'
 
     -- completion
     use 'nvim-treesitter/nvim-treesitter'

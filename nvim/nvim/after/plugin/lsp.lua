@@ -38,6 +38,15 @@ require('lspconfig')['pyright'].setup{
     flags = lsp_flags,
 }
 
+-- C#
+require("lspconfig")['csharp_ls'].setup{}
+
+-- C/C++
+require("lspconfig")['clangd'].setup{
+    on_attach = on_attach,
+    flags = lsp_flags,
+}
+
 -- go
 require('lspconfig')['gopls'].setup{
     on_attach = on_attach,

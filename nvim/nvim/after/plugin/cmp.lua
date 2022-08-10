@@ -54,4 +54,6 @@ require('lspconfig')['gopls'].setup {
 require('lspconfig')['pyright'].setup {
     capabilities = capabilities
 }
-
+require('lspconfig')['csharp_ls'].setup {
+    capabilities = capabilities
+}
