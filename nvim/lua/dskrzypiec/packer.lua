@@ -14,15 +14,16 @@ return require('packer').startup(function(use)
     use 'hrsh7th/cmp-buffer'
     use 'hrsh7th/cmp-path'
     use 'hrsh7th/cmp-cmdline'
+    use 'bluz71/vim-moonfly-colors'
 
     use {"akinsho/toggleterm.nvim", tag = 'v2.*', config = function()
         require("toggleterm").setup()
     end}
-    use 'tpope/vim-fugitive'
     use 'fatih/vim-go'
     use 'ervandew/supertab'
     use 'junegunn/fzf'
     use 'junegunn/fzf.vim'
     use 'feline-nvim/feline.nvim'
+    use 'nvim-telescope/telescope.nvim'
     use({'scalameta/nvim-metals', requires = { "nvim-lua/plenary.nvim" }})
 end)
