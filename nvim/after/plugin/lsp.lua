@@ -63,3 +63,25 @@ require('lspconfig')['gopls'].setup{
       },
     },
 }
+
+-- typescript
+require('lspconfig')['tsserver'].setup{
+    on_attach = on_attach,
+    flags = lsp_flags,
+}
+
+-- Rust
+require('lspconfig')['rust_analyzer'].setup{
+    on_attach = on_attach,
+    flags = lsp_flags,
+    settings = {
+      ['rust-analyzer'] = {
+            procMacro = { enable = true },
+            diagnostics = {
+                enable = true,
+                disabled = {'unresolved-macro-call', 'unresolved-proc-macro'},
+                enableExperimental = true,
+            }
+        }
+    }
+}

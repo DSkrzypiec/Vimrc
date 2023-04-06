@@ -26,5 +26,6 @@ return require('packer').startup(function(use)
     use 'feline-nvim/feline.nvim'
     use 'nvim-telescope/telescope.nvim'
     use {'hkupty/iron.nvim'}
+    use 'aditya-azad/candle-grey'
     use({'scalameta/nvim-metals', requires = { "nvim-lua/plenary.nvim" }})
 end)

@@ -6,3 +6,9 @@ backend
 RampedUp
 WebSocket
 frontend
+fastparse
+SQLite
+AWS
+CDK
+TCL
+Tailscale
