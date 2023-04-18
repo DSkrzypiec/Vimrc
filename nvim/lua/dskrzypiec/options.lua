@@ -5,11 +5,11 @@ vim.opt.relativenumber = true
 vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.softtabstop = 4
-vim.opt.textwidth = 79
+vim.opt.textwidth = 119
 vim.opt.wrap = true
 
 vim.opt.expandtab = true
-vim.opt.hlsearch = false
+vim.opt.hlsearch = true
 vim.opt.incsearch = true
 vim.opt.splitbelow = true
 vim.opt.splitright = true
@@ -20,4 +20,4 @@ vim.opt.listchars = { trail = '^', tab = '| ' }
 vim.opt.clipboard = "unnamed"
 
 vim.cmd([[ hi LineNr guibg=none guifg=#ffffff ]])
-vim.cmd [[colorscheme candle-grey]]
+vim.cmd [[colorscheme monochrome]]
