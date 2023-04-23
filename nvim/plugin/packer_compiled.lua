@@ -94,11 +94,6 @@ _G.packer_plugins = {
     path = "/Users/ds/.local/share/nvim/site/pack/packer/start/cmp-path",
     url = "https://github.com/hrsh7th/cmp-path"
   },
-  ["feline.nvim"] = {
-    loaded = true,
-    path = "/Users/ds/.local/share/nvim/site/pack/packer/start/feline.nvim",
-    url = "https://github.com/feline-nvim/feline.nvim"
-  },
   fzf = {
     loaded = true,
     path = "/Users/ds/.local/share/nvim/site/pack/packer/start/fzf",
@@ -108,6 +103,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/ds/.local/share/nvim/site/pack/packer/start/fzf.vim",
     url = "https://github.com/junegunn/fzf.vim"
+  },
+  ["iron.nvim"] = {
+    loaded = true,
+    path = "/Users/ds/.local/share/nvim/site/pack/packer/start/iron.nvim",
+    url = "https://github.com/hkupty/iron.nvim"
   },
   ["nvim-cmp"] = {
     loaded = true,
@@ -160,15 +160,30 @@ _G.packer_plugins = {
     path = "/Users/ds/.local/share/nvim/site/pack/packer/start/toggleterm.nvim",
     url = "https://github.com/akinsho/toggleterm.nvim"
   },
+  ["vim-fugitive"] = {
+    loaded = true,
+    path = "/Users/ds/.local/share/nvim/site/pack/packer/start/vim-fugitive",
+    url = "https://github.com/tpope/vim-fugitive"
+  },
   ["vim-go"] = {
     loaded = true,
     path = "/Users/ds/.local/share/nvim/site/pack/packer/start/vim-go",
     url = "https://github.com/fatih/vim-go"
   },
+  ["vim-monochrome"] = {
+    loaded = true,
+    path = "/Users/ds/.local/share/nvim/site/pack/packer/start/vim-monochrome",
+    url = "https://github.com/fxn/vim-monochrome"
+  },
   ["vim-moonfly-colors"] = {
     loaded = true,
     path = "/Users/ds/.local/share/nvim/site/pack/packer/start/vim-moonfly-colors",
     url = "https://github.com/bluz71/vim-moonfly-colors"
+  },
+  ["zig.vim"] = {
+    loaded = true,
+    path = "/Users/ds/.local/share/nvim/site/pack/packer/start/zig.vim",
+    url = "https://github.com/ziglang/zig.vim"
   }
 }
 

@@ -20,12 +20,13 @@ return require('packer').startup(function(use)
         require("toggleterm").setup()
     end}
     use 'fatih/vim-go'
+    use 'ziglang/zig.vim'
     use 'ervandew/supertab'
     use 'junegunn/fzf'
     use 'junegunn/fzf.vim'
-    use 'feline-nvim/feline.nvim'
     use 'nvim-telescope/telescope.nvim'
     use {'hkupty/iron.nvim'}
     use 'fxn/vim-monochrome'
+    use 'tpope/vim-fugitive'
     use({'scalameta/nvim-metals', requires = { "nvim-lua/plenary.nvim" }})
 end)

@@ -21,3 +21,19 @@ vim.opt.clipboard = "unnamed"
 
 vim.cmd([[ hi LineNr guibg=none guifg=#ffffff ]])
 vim.cmd [[colorscheme monochrome]]
+
+vim.cmd([[
+hi SL ctermbg=white ctermfg=black
+set statusline=
+:set statusline=%1*
+:set statusline=%{FugitiveStatusline()}
+:set statusline+=\ %F
+:set statusline+=%m
+:set statusline+=%r
+:set statusline+=\ [char=%B]
+:set statusline+=\ [bufNum=%n]
+:set statusline+=%=
+:set statusline+=[col=%c]
+:set statusline+=\ [line=%l/%L]
+:set statusline+=\ [%p%%]
+]])
